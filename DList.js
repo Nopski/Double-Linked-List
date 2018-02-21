@@ -29,9 +29,9 @@ class DoublyList {
     push_after(data, toNodeData) {
         const current = this.head;
         while(current) {
-            if(current.data == toNodeData) {
+            if(current.data === toNodeData) {
                 const node = new Node(node);
-                if(current == this.tail) {
+                if(current === this.tail) {
                     this.push_first(data);
                 }
                 else {
@@ -47,16 +47,16 @@ class DoublyList {
     delete(data) {
         let current = this.head;
         while(current) {
-            if(current.data == data) {
-                if(current == this.head && current==this.tail) {
+            if(current.data === data) {
+                if(current === this.head && current === this.tail) {
                     this.head = null;
                     this.tail = null;
                 }
-                else if(current == this.head){
+                else if(current === this.head){
                     this.head = this.head.next;
                     this.head.prev = null;
                 }
-                else if(current == this.tail) {
+                else if(current === this.tail) {
                     this.tail = this.tail.prev;
                     this.tail.next = null;
                 }
