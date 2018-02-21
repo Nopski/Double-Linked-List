@@ -1,8 +1,10 @@
 'use strict';
-function Node(data) {
-    this.data = data;
-    this.prev = null;
-    this.next = null;
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.prev = null;
+        this.next = null;
+    }
 }
 
 class DoublyList {
