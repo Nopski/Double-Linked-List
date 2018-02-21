@@ -67,6 +67,15 @@ class DoublyList {
             current = current.next;
         }
     }
+    print() {
+        let str = '';
+        let current = this.head;
+        while(current) {
+            str += current.data + ' ';
+            current = current.next;
+        }
+        console.log(str.trim());
+    }
 }
 
 const obj1 = { name: 'first' };
