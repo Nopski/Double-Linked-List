@@ -45,18 +45,18 @@ class DoublyList {
         }
     }
     delete(data) {
-        const current = this.head;
+        let current = this.head;
         while(current) {
             if(current.data == data) {
                 if(current == this.head && current==this.tail) {
                     this.head = null;
                     this.tail = null;
                 }
-                else if(current == this.tail){
+                else if(current == this.head){
                     this.head = this.head.next;
                     this.head.prev = null;
                 }
-                else if(current ==this.tail) {
+                else if(current == this.tail) {
                     this.tail = this.tail.prev;
                     this.tail.next = null;
                 }
@@ -80,15 +80,18 @@ class DoublyList {
     }
 }
 
-const obj1 = { name: 'first' };
-const obj2 = { name: 'second' };
-const obj3 = { name: 'third' };
+const obj1 = { name: 1 };
+const obj2 = { name: 2 };
+const obj3 = { name: 3 };
 const obj4 = { name: 'fourth' };
 const obj5 = { name: 'fifth' };
 
 const list = new DoublyList();
-list.push_first(obj1);
-list.push_first(obj2);
-list.push_first(obj3);
+list.push_first(1);
+list.push_first(2);
+list.push_first(3);
 
-console.dir(list);
+list.print();
+
+list.delete(2);
+list.print();
