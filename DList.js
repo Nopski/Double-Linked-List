@@ -27,46 +27,46 @@ class DoublyList {
         this.sizer++;
     }
     push_after(data, toNodeData) {
-        const current = this.head;
-        while(current) {
-            if(current.data === toNodeData) {
+        const temp = this.head;
+        while(temp) {
+            if(temp.data === toNodeData) {
                 const node = new Node(node);
-                if(current === this.tail) {
+                if(temp === this.tail) {
                     this.push_first(data);
                 }
                 else {
-                    current.next.prev = node;
-                    node.prev = current;
-                    node.next = current.next;
-                    current.next = node;
+                    temp.next.prev = node;
+                    node.prev = temp;
+                    node.next = temp.next;
+                    temp.next = node;
                     this.sizer++;
                 }
             }
         }
     }
     delete(data) {
-        let current = this.head;
-        while(current) {
-            if(current.data === data) {
-                if(current === this.head && current === this.tail) {
+        let temp = this.head;
+        while(temp) {
+            if(temp.data === data) {
+                if(temp === this.head && temp === this.tail) {
                     this.head = null;
                     this.tail = null;
                 }
-                else if(current === this.head){
+                else if(temp === this.head){
                     this.head = this.head.next;
                     this.head.prev = null;
                 }
-                else if(current === this.tail) {
+                else if(temp === this.tail) {
                     this.tail = this.tail.prev;
                     this.tail.next = null;
                 }
                 else {
-                    current.prev.next = current.next;
-                    current.next.prev = current.prev;
+                    temp.prev.next = temp.next;
+                    temp.next.prev = temp.prev;
                 }
                 this.sizer--;
             }
-            current = current.next;
+            temp = temp.next;
         }
     }
     print() {
